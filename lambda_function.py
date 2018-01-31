@@ -259,7 +259,8 @@ class VWCarnet(object):
 def main(event, context):
 
     vw = VWCarnet(event)
-    vw._carnet_do_action()
+    if vw.output != "":
+        vw._carnet_do_action()
     return {
         "isBase64Encoded": False,
         "statusCode": 200,
