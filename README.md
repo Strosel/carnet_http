@@ -3,7 +3,7 @@ Control and automate your Volkswagen through http
 
 ## Installing
 **Requirements**
-* Amazon AWS & developer accounts
+* An Amazon AWS account
 
 Create a new lambda function with the microservice blueprint.<br>
 Upload `lambda_function.py` and the  `modules` folder as a .zip file to the new lambda function with `lambda_function.main` as the handler and a timeout of 1min 30s or more.<br>
