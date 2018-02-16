@@ -8,8 +8,12 @@ Control and automate your Volkswagen through http
 Create a new lambda function with the microservice blueprint.<br>
 Upload `lambda_function.py` and the  `modules` folder as a .zip file to the new lambda function with `lambda_function.main` as the handler and a timeout of 1min 30s or more.<br>
 Add your username and password to `lambda_function.py` in the `VWCarnet` constructor.<br>
-In the AWS console for your function select the API Gateway trigger and open it.<br>
-Go to `ANY` > `Integration Request` and check `Use lambda proxy integration`
+Go back to the aws console, open API Gateway and create a new API. Give it a name and click "create API".<br>
+Click "Actions" and "Create Method" select the "GET" trigger. <br>
+In the setup give it "Lambda Function", "Use Lambda Proxy integration", select your region and function and save. <br>
+Go back to the Lambda function and give it the "API Gateway" trigger, select the API you just created. Make it "Open". <br>
+You should now have a card with information about the trigger, including a link to trigger it. <br>
+Save and you're done!
 
 ## Usage
 Using the `Invoke URL` from the lambda function trigger the function takes two GET variables `task` and `action`.<br>
